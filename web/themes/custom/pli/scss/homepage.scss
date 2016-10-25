@@ -1,0 +1,173 @@
+
+.intro {
+  background: #FFF;
+  box-shadow: 0 2px 5px 0 #CCC;
+  padding: 30px 10px;
+  border-bottom: $primary-color 4px solid;
+}
+
+.intro p {
+  margin: 0 0 0.5em;
+}
+
+
+
+.hashtags,
+.field--name-field-hashtags{
+  margin-top:30px;
+  text-align:center;
+}
+
+
+h3.hashtag,
+.field--name-field-hashtags .field__item{
+  font-size: 1.6rem;
+  line-height: 1.2em;
+  color: $primary-color;
+  margin: 15px auto;
+  font-family: 'Comfortaa', cursive;
+}
+
+
+
+.intro__cta{
+  text-align:center;
+  margin-top:40px;
+}
+
+.articulos{
+  position:relative;
+}
+
+.articulos h3{
+  line-height:1.2em;
+  margin-bottom:0;
+}
+
+.articulos p{
+  margin-top:0.5em;
+}
+
+.articulo time{
+  font-size:0.9em;
+  color: $secondary-color;
+  margin-top:0.5em;
+  display:block;
+}
+
+
+.articulos__mas{
+  font-weight:bold;
+}
+
+a.articulos__ver_todos{
+  margin-top:20px;
+  font-size:0.9em;
+}
+
+.siguenos{
+
+  background: url(../img/teselate.svg) center top;
+  color:#FFF;
+  margin-top:4em;
+
+  padding:40px 0;
+  min-height:250px;
+}
+
+.siguenos h2{
+  color:#FFF;
+  font-size:1.8rem;
+  text-align:center;
+  margin:0 40px 20px;
+}
+
+.siguenos a{
+  display:block;
+  width:auto;
+  color:#FFF;
+  text-align: center;
+  font-size:3.5em;
+  text-decoration:none;
+  transition:transform 0.3s ease;
+  margin:0.25em 0;
+}
+
+.siguenos a:hover{
+  transform: scale(0.9);
+}
+
+
+.siguenos img{
+  width:60%;
+  max-width:150px;
+}
+
+.peticiones{
+  max-width:900px;
+}
+
+.peticion{
+  text-align:center;
+}
+
+.peticion h3{
+  text-align: center;
+  padding-bottom:1em;
+  border-bottom: 1px solid $light-gray;
+}
+
+.peticion p{
+  text-align: center;
+}
+
+.peticion a.button{
+  margin:50px auto;
+}
+
+.peticiones__ver_todas{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.peticiones__ver_todas .button{
+  margin:0 auto;
+}
+
+
+@include breakpoint(medium) {
+
+
+  .intro {
+    padding: 30px;
+  }
+  .intro__cta{
+    text-align:left;
+  }
+
+  .lista-articulos .views-row:nth-child(3){
+    display:none;
+  }
+
+}
+
+@include breakpoint(large) {
+  .hashtags{
+    margin-top:0;
+  }
+  .lista-articulos .views-row:nth-child(3){
+    display:block;
+  }
+
+  .peticion{
+    padding-right:40px;
+    width:auto;
+    max-width:450px; }
+
+
+  .peticiones__ver_todas{
+    text-align:left;
+    margin-bottom:10px;
+  }
+
+}

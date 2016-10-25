@@ -1,0 +1,54 @@
+.circular-bar {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin:0 auto;
+}
+
+.circular-bar__background {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  top: 50%;
+  left: 50%;
+  margin-left:-90px;
+  margin-top:-90px;
+  background: #FFF;
+  position: absolute;
+}
+
+.circular-bar__signatures{
+  position:absolute;
+  top:40%;
+  left:50%;
+  font-weight:bold;
+  font-size:1.8em;
+  transform:translate(-50%,-50%);
+}
+
+.circular-bar__goal{
+  position:absolute;
+  top:60%;
+  left:50%;
+
+  font-size:1.3em;
+  transform:translate(-50%,-50%);
+}
+
+$step: 1; // step of % for created classes
+$loops: 100;
+$increment: (360 / $loops);
+$half: round($loops / 2);
+@for $i from 0 through $loops {
+  .circular-bar--progress-#{$i*$step} {
+    @if $i < 50 {
+      $nextdeg: 90deg + ( $increment * $i );
+      background-image: linear-gradient(90deg, #CCC 50%, transparent 50%, transparent), linear-gradient($nextdeg, $red 50%, #CCC 50%, #CCC);
+    }
+    @else {
+      $nextdeg: -90deg + ( $increment * ( $i - $half ) );
+      background-image: linear-gradient($nextdeg, $red 50%, transparent 50%, transparent), linear-gradient(270deg, $red 50%, #CCC 50%, #CCC);
+    }
+  }
+}

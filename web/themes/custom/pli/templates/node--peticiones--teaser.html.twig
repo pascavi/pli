@@ -1,0 +1,20 @@
+{{ attach_library('classy/node') }}
+{%
+set classes = ['peticion']
+%}
+<article  data-id="{{ content.id }}" {{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  <h3 data-equalizer-watch><a target="_blank" class="gtm-click" data-action="change.org"
+                              data-label="homepage"
+                              href="{{ content.enlace }}">{{ label }}</a></h3>
+  {{ title_suffix }}
+  <p>Firmas</p>
+  <div class="circular-bar">
+    <div class="circular-bar__background"></div>
+    <div class="circular-bar__signatures"></div>
+    <div class="circular-bar__goal"></div>
+  </div>
+  <a target="_blank"
+     href="{{ content.enlace }}"
+     class="button gtm-click" data-action="change.org" data-label="homepage">Apóyanos!</a>
+</article>

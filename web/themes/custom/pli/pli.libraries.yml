@@ -1,0 +1,18 @@
+base:
+  version: 1.x
+  js:
+    js/app.js: {}
+  css:
+    theme:
+      css/app.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+theme:
+  header: true
+  js:
+    https://use.fontawesome.com/3bdb074954.js: { type: external }
+  css:
+    theme:
+      https://fonts.googleapis.com/css?family=Comfortaa:700|Droid+Sans: { type: external }

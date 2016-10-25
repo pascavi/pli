@@ -1,0 +1,12 @@
+{{ attach_library('classy/node') }}
+{%
+  set classes = ['articulo']
+%}
+<article {{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  <h3 data-equalizer-watch><a href="{{ url }}" rel="bookmark">{{ label }}</a></h3>
+  {{ title_suffix }}
+  {{ content.field_fecha}}
+  <p>{{ content.body }}</p>
+  <p><a href="{{ url }}" rel="bookmark" class="articulos__mas">Leer artículo</a></p>
+</article>
