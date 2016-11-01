@@ -1,0 +1,6 @@
+name: PLI custom
+type: module
+description: PLI custom
+package: other
+core: '8.x'
+version: '8.x-1.0'

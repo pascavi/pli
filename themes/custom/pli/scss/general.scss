@@ -1,0 +1,145 @@
+.columns:last-child:not(:first-child) {
+  float: left;
+}
+
+body {
+  font-family: 'Droid Sans', sans-serif;
+  color: #333;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Comfortaa', cursive;
+}
+
+h1 {
+  color: $secondary-color;
+  margin-bottom: 1em;
+  margin-top: 1.5em;
+  font-size: 1.6rem;
+  line-height:1.3em;
+  font-family: 'Droid Sans', sans-serif;
+}
+
+.path-frontpage h2  {
+  color: $secondary-color;
+  margin-bottom: 0.25em;
+  margin-top: 1.5em;
+  font-size: 1.6rem;
+  line-height:1.3em;
+  font-family: 'Droid Sans', sans-serif;
+}
+
+.path-frontpage h2 a{
+  color: $secondary-color;
+}
+
+ul,ol{
+  padding-left: 24px;
+}
+
+li{
+  margin-bottom:0.75em;
+}
+
+ol ol{
+  list-style: lower-alpha;
+  margin-top:0.5em;
+}
+
+ ol ul{
+  margin-top:0.5em;
+}
+
+blockquote{
+  margin-right:0;
+  margin-left:0;
+  margin-bottom:1.5em;
+  padding-left:20px;
+  position:relative;
+}
+
+blockquote::before{
+  content:"\201C";
+  position:absolute;
+  top:-0.45em;
+  left:-30px;
+  font-family: Georgia, sans-serif;
+  font-size:5rem;
+  color:#DDD;
+  z-index:-1;
+}
+
+blockquote::after{
+  content:'';
+  position:absolute;
+  width:2px;
+  background-color:#DDD;
+  left:-10px;
+  top:35px;
+  bottom:0;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: $primary-color;
+}
+
+a:hover, a:active, a:focus {
+  text-decoration: underline;
+}
+
+.main-content a{
+  font-weight:bold;
+}
+
+a.button {
+  color: #FFF;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  vertical-align:middle;
+}
+
+.button .fa{
+  margin-right:6px;
+  font-size:0.8em;
+  display:inline-block;
+  vertical-align:middle;
+  font-weight:normal;
+  position:relative;
+  top:-2px;
+}
+
+.button.tertiary{
+  background: #EEE;
+  color: #666;
+  font-size:0.9em;
+}
+
+.button.tertiary:hover{
+  background: #E6E6E6;
+}
+
+
+.sidebar{
+  text-align:center;
+  padding-top:3em;
+}
+
+
+
+@include breakpoint(medium) {
+  blockquote{
+    padding-right:25px;
+  }
+
+
+}
+
+@include breakpoint(large) {
+
+  .intro{
+    font-size: 1.2rem;
+  }
+
+}
