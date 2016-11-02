@@ -41,7 +41,7 @@ gulp.task('browser-sync', function () {
   //initialize browsersync
   browserSync.init({
     //browsersync with a php server
-    proxy: "pli.dev:8081",
+    proxy: "pli2.dev:8081",
     notify: true
   });
 });

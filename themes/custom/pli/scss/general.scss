@@ -98,6 +98,12 @@ a.button {
   border-radius: 5px;
   text-decoration: none;
   vertical-align:middle;
+
+}
+
+.button--fa{
+  position:relative;
+  padding-left:40px;
 }
 
 .button .fa{
@@ -106,8 +112,10 @@ a.button {
   display:inline-block;
   vertical-align:middle;
   font-weight:normal;
-  position:relative;
-  top:-2px;
+  /*position:relative;
+  top:-2px;*/
+  position:absolute;
+  left:15px;
 }
 
 .button.tertiary{
