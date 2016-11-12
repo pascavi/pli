@@ -1,13 +1,15 @@
-name: 'Entity browser test'
+name: 'Test IEF'
 type: module
-description: 'Support module for the Entity browser module tests.'
+description: 'Test Inline Entity Form Integration'
 # core: 8.x
 package: Testing
 # version: VERSION
 dependencies:
-  - entity_browser
   - file
-  - node
+  - entity_browser
+  - entity_browser_entity_form
+  - media_entity
+  - inline_entity_form
 
 # Information added by Drupal.org packaging script on 2016-11-08
 version: '8.x-1.0-alpha11'
