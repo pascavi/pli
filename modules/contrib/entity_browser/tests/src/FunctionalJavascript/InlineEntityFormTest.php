@@ -39,6 +39,7 @@ class InlineEntityFormTest extends EntityBrowserJavascriptTestBase {
     'create media',
     'update media',
     'access ief_entity_browser_file entity browser pages',
+    'access ief_entity_browser_file_modal entity browser pages',
     'access content',
     'create ief_content content',
     'edit any ief_content content',
@@ -139,7 +140,7 @@ class InlineEntityFormTest extends EntityBrowserJavascriptTestBase {
     $this->assertSame('file:1', $secondElement->getAttribute('data-entity-id'));
 
     // Test remove of element.
-    $page->pressButton('ief_media_bundle_file_field_remove_1_1');
+    $this->click('input[name*="ief_media_bundle_file_field_remove_1_1"]');
     $this->assertSession()->assertWaitOnAjaxRequest();
 
     $page->pressButton('Update Test File Media');
@@ -150,7 +151,7 @@ class InlineEntityFormTest extends EntityBrowserJavascriptTestBase {
 
     // Check that remote button does not exist for already removed entity.
     $this->assertSession()
-      ->elementNotExists('css', '[name="ief_media_bundle_file_field_remove_1_1"]');
+      ->elementNotExists('css', '[name*="ief_media_bundle_file_field_remove_1_1"]');
 
     // Test add inside Entity Browser.
     $page->clickLink('Select entities');
@@ -234,4 +235,26 @@ class InlineEntityFormTest extends EntityBrowserJavascriptTestBase {
     $this->assertSame('file:2', $secondElement->getAttribute('data-entity-id'));
   }
 
+  /**
+   * Checks auto_open functionality for modals.
+   */
+  public function testModalAutoOpenInsideInlineEntityForm() {
+
+    $this->config('core.entity_form_display.node.ief_content.default')
+      ->set('content.ief_media_field.third_party_settings.entity_browser_entity_form.entity_browser_id', 'ief_entity_browser_file_modal')
+      ->save();
+
+    $this->drupalGet('node/add/ief_content');
+    $page = $this->getSession()->getPage();
+
+    $page->fillField('Title', 'Test IEF Title');
+    $page->pressButton('Add existing Test File Media');
+
+    $this->assertSession()->assertWaitOnAjaxRequest();
+
+    $this->getSession()
+      ->switchToIFrame('entity_browser_iframe_ief_entity_browser_file_modal');
+
+    $this->assertSession()->pageTextContains('Test entity browser file modal');
+  }
 }
