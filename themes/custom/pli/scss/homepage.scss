@@ -165,6 +165,10 @@ a.articulos__ver_todos{
     display:block;
   }
 
+  .path-articulos .view-articulos .views-row:nth-child(2n+1){
+    clear:none;
+  }
+
   .path-articulos .view-articulos .views-row:nth-child(3n+1){
     clear:left;
   }
