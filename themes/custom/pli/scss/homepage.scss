@@ -65,6 +65,7 @@ a.articulos__ver_todos{
   font-size:0.9em;
 }
 
+
 .siguenos{
 
   background: url(../img/teselate.svg) center top;
@@ -149,6 +150,11 @@ a.articulos__ver_todos{
     display:none;
   }
 
+  .path-articulos .view-articulos .views-row:nth-child(2n+1){
+    clear:left;
+  }
+
+
 }
 
 @include breakpoint(large) {
@@ -157,6 +163,10 @@ a.articulos__ver_todos{
   }
   .lista-articulos .views-row:nth-child(3){
     display:block;
+  }
+
+  .path-articulos .view-articulos .views-row:nth-child(3n+1){
+    clear:left;
   }
 
   .peticion{
